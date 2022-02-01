@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&family=Poiret+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+:root{
+    --maroon-web: #800204ff;
+    --olive-green: hsla(58, 42%, 46%, 1);
+    --platinum: hsla(210, 5%, 93%, 1);
+    --blood-red: hsla(0, 100%, 20%, 1);
+    --gold-metallic: hsla(48, 58%, 49%, 1);
+    --blue-ncs: #1D86B3ff;
+}
+
+body{
+    background: var(--maroon-web);
+}
+
+.unactive{
+    display: none;
+}
+
+/* ---------------- TOP BARRE ------------------ */
+
+li{
+    list-style-type: none;
+}
+
+#top-barre{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 25px;
+}
+
+#top-barre-left-part{
+    width: 50vw;
+    display: flex;
+}
+
+#top-barre-right-part{
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    width: 50vw;
+}
+
+#mise-contener, #wallet-contener, #cout-contener{
+    border: 3px solid var(--light-table-green);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px 15px;
+    color: var(--gold-metallic);
+    font-weight: 600;
+    text-transform: uppercase;
+    height: 45px;
+    width: auto;
+    font-size: 18px;
+}
+
+#profil-contener{
+    align-items: center;
+    display: flex;
+}
+
+#profil{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--gold-metallic);
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 20%;
+    min-width: 200px;
+    height: 50px;
+    padding: 10px 15px 10px 0;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+#photo-profil{
+    width: 45px;
+    height: 45px;
+}
+
+#name{
+    margin-left: 10px;
+}
+
+#mise, #wallet{
+    text-transform: inherit;
+}
+
+#logo{
+    margin-top: 50px;
+    width: 100px;
+}
+
+#logo-little-screen{
+    display: none;
+}
+
+.bouton-header{
+    width: 150px;
+}
+
+#bouton-header-contener{
+    display: flex;
+    align-items: center;
+}
+
+#regle{ 
+    width: 60vw;
+    height: 80vh;
+    background: red;
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 30vw);
+    transition: .4s;
+}
+
+.regle-unactiv{
+    display: none;
+}
+
+.bouton-header{
+    background-color: unset;
+    border: unset;
+    font-size: 18px;
+    text-transform: uppercase;
+    height: 50px;
+    width: 100px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.bouton-header:hover, .bouton-action:hover{
+    color: var(--gold-metallic);
+    transition: .2s;
+}
+
+#avancement-contener{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#avancement-contener p{
+    text-align: center;
+    font-size: 21px;
+    margin: 5px;
+    color: var(--gold-metallic);
+    font-family: 'Montserrat', sans-serif;
+}
+
+#action{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.bouton-action{
+    padding: 5px;
+    margin: 0 10px;
+    border: unset;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background: var(--maroon-web);
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* --------------- COOKIES ------------------- */
+
+#accept-cookies-conteneur{
+    width: 45vw;
+    height: auto;
+    padding: 3vw;
+    background: var(--olive-green);
+    position: absolute;
+    bottom: 5vw;
+    left: 5vw;
+    z-index: 10;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#accept-cookies-conteneur p{
+    margin: 5px;
+}
+
+#accept-cookies-conteneur h6{
+    margin: 5px;
+    font-size: 1.5em;
+}
+
+.cookies-answer-button{
+    background: var(--maroon-web);
+    color: white;
+    border-radius: 5px;
+    border: unset;
+    padding: 10px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+.cookies-answer-button:active{
+    background: var(--blood-red);
+}
+
+
+
+
+/* ------------- CONNECTION --------------- */
+
+#page-de-connection{
+    width: 100vw;
+    height: 100vh;
+    background:  url(images/pexels_drew_rae_1871508.jpg.webp);
+    background-size: calc(1440px + 25%);
+    background-position: center;
+    display: none;
+}
+
+#fond-noir{
+    display: flex;
+    background: rgba(0, 0, 0, .6);
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-connection-contenu{
+    text-align: center;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--eggshell);
+}  
+
+#page-connection-contenu h1{
+    font-family: 'Poiret One', cursive;
+    font-size: 45px;
+    font-weight: 1000;
+}
+
+#page-connection-contenu h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    width: 100%;
+}
+
+.connection-label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.connection-input{
+    width: 225px;
+    height: 30px;
+    border-radius: 25px;
+    padding: 10px;
+    border: 2px solid var(--eggplant);
+}
+
+#connection{
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: var(--eggplant);
+    border: 2px solid var(--eggplant);
+    color: var(--eggshell);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+#connection:active{
+    background-color: var(--platinum);
+}
+
+/*----------- CARTE CASE ------------- */
+
+.carte-unactiv{
+    display: none;
+}
+
+#carte-avancement{
+    background: url(images/background\-projet1.png);
+    width: 60vw;
+    height: 80vh;
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 30vw);
+    transition: .4s;
+    overflow: scroll;
+}
+
+#case-conteneur{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.case{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin: 5% 5% 2.5% 2.5%;
+}
+
+#personnage{
+    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+
+.case img{
+    width: 150%;
+    margin-top: -30px;
+    margin-left: -20px;
+    display: none;
+}
+
+/*  ------------- PLATEAU DE JEU ------------- */
+
+#plateau-de-jeu{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: 80vh;
+    background: var(--blood-red);
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#joueur, #dealer{
+    display: flex;
+    justify-content: space-around;
+    height: 48%;
+    gap: 20px;
+}
+
+#info{
+    text-align: center;
+    color: var(--gold-metallic);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.conteneur-info-somme{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 15%;
+}
+
+.jeu{
+    width: 60%;
+}
+
+.controle-conteneur{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.info-somme{
+    width: 75px;
+    height: 75px;
+    background: var(--maroon-web);
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: var(--gold-metallic);
+}
+
+.type-joueur{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    color: var(--gold-metallic);
+}
+
+.bouton-controle{
+    border: 2px solid var(--gold-metallic);
+    background: var(--maroon-web);
+    cursor: pointer;
+    color: var(--gold-metallic);
+    font-size: 13px;
+    width: 150px;
+    height: 50px;
+}
+
+.bouton-controle:hover{
+    background: var(--gold-metallic);
+    color: rgb(15, 15, 15);
+    transition: .2s;
+}
+
+.bouton-controle:disabled{
+    opacity: .6;
+}
+
+.bouton-controle:disabled:hover{
+    background: var(--maroon-web);
+    color: var(--gold-metallic);
+}
+
+.jeu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.affichage-carte{
+    width: 100%;
+    grid-template-columns: repeat(7, 250px);
+}
+
+.carte-contener{
+    width: 250px;
+    height: 250px;
+    transform: translateX(calc(29px + -180px * var(--i)));
+}
+
+/* --------- AFFICHE DE FIN DE JEU -------------- */
+
+#jeu-fini{
+    width: 70vw;
+    height: 80vh;
+    background: url(images/F240---Campagne-fleurie-Acrylique-24po-x-30po-900x750.gif) no-repeat;
+    background-size: 100%;
+    background-position: 50% 30%;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    left: calc(50% - 35vw);
+    top: calc(50% - 40vh);
+    border-radius: 10px;
+}
+
+#jeu-fini h2{
+    margin-top: 20%;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(34, 165, 88);
+}
+
+#jeu-fini p{
+    margin: 20px 0 50px 0;
+    width: 50%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(223, 70, 55);
+}
+
+#recommencer{
+    padding: 5px 10px;
+    width: 150px;
+    height: 30px;
+    background-color: rgb(223, 70, 55);
+    border: unset;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    transition: .3s;
+    cursor: pointer;
+}
+
+#recommencer:active{
+    background-color: rgb(211, 83, 72);
+}
+
+@media screen and (max-width:1000px) {
+    
+/* ---------- TOP BARRE ----------- */ 
+
+#top-barre{
+    height: 275px;
+    flex-direction: column;
+    justify-content: inherit;
+    gap: 10px;
+}
+
+#top-barre-left-part{
+    width: 100vw;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+#top-barre-right-part{
+    margin-left: 3vw;
+}   
+
+.bouton-header{
+    width: 45%;
+    margin: 0;
+    height: unset;
+}
+
+#mise-contener, #cout-contener, #wallet-contener{
+    padding: unset;
+}
+
+.affichage-carte{
+    grid-template-columns: 250px;
+}
+
+.carte-contener{
+    transform: translateY(calc(29px + -180px * var(--i)));
+}
+
+#top-barre-right-part{
+    width: 100vw;
+    justify-content: center;
+    gap: 20px;
+}
+
+#logo{
+    display: none;
+}
+
+#logo-little-screen{
+    display: flex;
+    width: 75px;
+    margin: 0 5%;
+}
+
+#bouton-header-contener{
+    height: 100px;
+}
+
+#profil{
+    display: none;
+}
+
+/* ------------- PLATEAU DE JEU -------------- */
+
+#dealer{
+    flex-direction: column;
+}
+
+#joueur{
+    flex-direction: column-reverse;
+}
+
+.controle-conteneur{
+    width: 100%;
+    margin: 20px 0;
+}
+
+#controle-conteneur-dealer{
+    display: none;
+}
+
+#plateau-de-jeu{
+    height: auto;
+}
+
+.jeu{
+    width: 100%;
+}
+
+.conteneur-info-somme{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#info{
+    margin: 30px 0 30px 0;
+}
+
+#valide-mise{
+    margin: 40px 0;
+}
+
+#jeu-joueur{
+    margin: 30px 0;
+}
+
+/* -------- AFFICHE DE FIN DE JEU ---------- */
+
+#jeu-fini{
+    position: fixed;
+    height: 60vh;
+    top: calc(50%-30vh);
+    background-size: 180%;
+}
+
+#jeu-fini h1{
+    margin-top: 400px;
+}
+
+}
+
+ 
