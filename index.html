@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" type="image/ico" sizes="32x32" href="/images/favicon-32x32.ico">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <script src="script/script.js" async></script>
+
+  <title>Blackjack</title>
+</head>
+
+<body>
+
+    <!-- CODE POUR UNE EVENTUELLE PAGE DE CONNECTION, PAS UTLISÉE ICI, CELA PERMET 
+        D'AFFICHER LE NOM DU JOUEUR  --
+    <div id="page-de-connection">
+        <div id="fond-noir">
+            <div  id="page-connection-contenu">
+                <h1>Bienvenue</h1>
+                <h2>Veuillez vous connecter</h2>
+                <label for="pseudo" id="label-pseudo" class="connection-label">Pseudo :</label>
+                <input type="text" id="pseudo" class="connection-input" maxlength="20" minlength="3">
+                <label for="password" id="label-pseudo" class="connection-label">Mot de passe :</label>
+                <input type="password" id="password" class="connection-input" minlength="3">
+                <button id="connection" tabindex="0">Connection</button>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div id="accept-cookies-conteneur">
+        <h6>Ce site utilise des cookies</h6>
+        <p>Pour le bon fonctionnement du site, et principalement ne pas perdre vos données lorsque 
+            vous rafraichissez la page veuillez accepter les cookies, merci
+        </p>
+        <button id="cookies-true" class="cookies-answer-button">Accepter</button>
+        <button id="cookies-false" class="cookies-answer-button">Refuser</button>
+    </div>
+
+    <div id="unactiver" class="unactive"></div>
+
+    <div id="regle" class="regle-unactiv">
+        <div class="bloc-blabla">
+            <div>
+                <h2>Vous voici chevalier dans les terres du milieu...</h2>
+                <p>Une terrible nouvelle vous est parvenu dans votre majestueux château,<br>
+                    c'est la princesse du royaume voinsin qui a été capturée par des orques.<br>
+                    <br>
+                    Ce sont des bêtes sauvage horriblement laides et cruelles.<br>En tant que brave chevalier vous vous devez
+                    d'aller la secourir !
+                    <br>
+                    Vous partez immédiatement avec votre fidèle destrier,votre cheval "Galopa".<br>
+                    <br>Pour cela vous allez devoir passer la nuit dans des tavernes,<br>mais les propriétaires ne vondront pas
+                    vous laissez dormir sans payer évidemment.
+                    <br>
+                    Dans la précipitation vous êtes partis sans argents, que faire...<br>
+                    Le maitre des lieux est fan de jeux et voilà ce qu'il vous propose: <br>
+                    <br><i>"-Je vous défie sur une partie de blackjack si vous la remportez, vous avez le mêrite et vous pouvez
+                        vous reposez ici"</i>
+                </p>
+            </div>
+        </div>
+        <div class='explicatif'>
+            <h2>Comment ça marche:</h2>
+            <p>Le jeu commence après que vous ayez misé. Votre enemmi vous distribue deux cartes face découverte.
+                Ensuite, il se distribue deux cartes à lui- même, l'une face découverte, l'autre face cachée.</p>
+        
+            <p>Après ça, vous devez choisir quoi faire. Vous pouvez choisir de piocher une nouvelle carte(bouton "hit") ou
+                rester (vous garder votre score sans pouvoir piocher à nouveau jusqu'a la fin de la manche).<br>
+                <br>
+                Les joueurs peuvent aussi choisir de "doubler":
+                Si le joueur double, sa mise sera multiplier par 2. Par exemple, si la mise de départ est de 1000 pieces, le double
+                sera de 2000 pieces. En contrepartie, vous piocher une unique carte, vous ne pourrez plus piocher après avoir
+                doubler<br>
+                <br>
+        
+            <p>Le croupier joue après vous. Votre ennemie est obliger de piocher tant qu'il n'a pas un score superieur ou égale
+                à 17</p>
+        
+            <p>Vous gagnez si votre score est superieur au score de votre ennemie ou si vous avez un score de 21. Par contre si votre enemis à un score superieur au votre vous perdez</p>
+        </div>
+        
+        <div class="commande-mise">
+            <p>la flèche du haut augmente la mise, la fleche du bas la diminue. Le bouton 'a' augmente de 10</p>
+        </div>
+        
+        <div class="but-du-jeux">
+            <h2>But du jeux:</h2>
+            <p>Le but est très simple, jouez au blackjack jusqu'à accumuler assez de point pour passer à la case suivante(le
+                niveau supérieur).<br>
+                Le jeux se termine lorsque vous avez passé tous les niveaux.<br>
+                <br>
+                Le chemin sera long est fastidieux mais vous réussirez jeune chevalier.
+            </p>
+        </div>
+    </div>
+
+    <div id="jeu-fini"> 
+        <h2>Bravo à toi !</h2>
+        <p>Tu à réussie à atteindre le chateau de la princesse, maintenant il va falloir que tu sois courageux pour vaincre le méchant</p>
+        <button id="recommencer" onclick=recommencer()>Nouvelle partie</button>
+    </div>
+
+    <div id="carte-avancement" class="carte-unactiv">
+        <div id="case-conteneur">
+            <div id="case-1" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-1"></div>
+            <div id="case-2" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-2"></div>
+            <div id="case-3" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-3"></div>
+            <div id="case-4" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-4"></div>
+            <div id="case-5" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-5"></div>
+            <div id="case-6" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-6"></div>
+            <div id="case-7" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-7"></div>
+            <div id="case-8" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-8"></div>
+            <div id="case-9" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-9"></div>
+            <div id="case-10" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-10"></div>
+            <div id="case-11" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-11"></div>
+            <div id="case-12" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-12"></div>
+            <div id="case-13" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-13"></div>
+            <div id="case-14" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-14"></div>
+            <div id="case-15" class="case"><img src="images/SoloCharacter.png" alt="personnage" id="perso-case-15"></div>
+        </div>
+    </div>
+
+    <p id="error"><span>erreur</span><br>Désolé mais ce format d'appareil est trop petit pour ce jeu.<br>
+        Essayer sur un écran plus grand</p>
+
+    <div id="contenu-du-site">
+        <header id="top-barre" class="unactive">
+            <div id="top-barre-left-part">
+                <div id="profil-contener">
+                    <div id="profil">
+                        <img src="images/istockphoto-1127625538-170667a.jpg" alt="photo-profil" id="photo-profil">
+                        <li id="name">TIM COOK</li>
+                    </div>
+                </div>
+                <div id="bouton-header-contener"><button id="regle-bouton" class="bouton-header">Regle</button>
+                    <img src="images/logo-black-jack.svg" alt="logo" id="logo-little-screen">
+                    <button id="carte-bouton" class="bouton-header">Voir la carte</button>
+                </div>
+                <div id="avancement-contener">
+                    <p><span id="avancement">3</span>/15</p>
+                    <div id="action">
+                        <button id="case-suivante" class="bouton-action">Case Suivante</button>
+                        <button id="sauter-case" class="bouton-action">Sauter une case</button>
+                    </div>
+                </div>
+            </div>
+            <li><img src="images/logo-black-jack.svg" alt="logo" id="logo"></li>
+            <div id="top-barre-right-part">
+                <li id="mise-contener">mise : <span id="mise">500</span></li>
+                <li id="wallet-contener">portefeuille : <span id="wallet">500</span></li>
+                <li id="cout-contener">Prochaine Case : <span id="cout">500</span></li>
+            </div>
+        </header>
+        <div id="plateau-de-jeu">
+            <div id="dealer">
+                <div class="controle-conteneur" id="controle-conteneur-dealer"></div>
+                <div class="jeu" id="jeu-dealer">
+                    <div class="affichage-carte unactive" id="affichage-carte-dealer">
+                        <img src='images/vide.png' class="carte-contener" id="carte-dealer-1" style="--i:0;">
+                        <img src='images/vide.png' class="carte-contener" id="carte-dealer-2" style="--i:1;" alt="carte-d-2">
+                        <img src='images/vide.png' class="carte-contener" id="carte-dealer-3" style="--i:2;" alt="carte-d-3">
+                        <img src='images/vide.png'class="carte-contener" id="carte-dealer-4" style="--i:3;" alt="carte-d-4">
+                        <img src='images/vide.png' class="carte-contener" id="carte-dealer-5" style="--i:4;" alt="carte-d-5">
+                        <img src='images/vide.png' class="carte-contener" id="carte-dealer-6" style="--i:5;" alt="carte-d-6">
+                        <img src='images/vide.png' class="carte-contener" id="carte-dealer-7" style="--i:6;" alt="carte-d-7">
+                    </div>
+                </div>
+                <div class="conteneur-info-somme">
+                    <p class="info-somme" id="somme-dealer">18</p>
+                    <p class="type-joueur">Dealer</p>
+                </div>
+            </div>
+            <div id="info-conteneur"><p id="info">
+            </p></div>
+            <div id="joueur">
+                <div class="controle-conteneur">
+                    <button class="bouton-controle" id="double" onclick=double() disabled >Double</button>
+                    <button class="bouton-controle" id="tirer" onclick=hit() disabled>Hit</button>
+                    <button class="bouton-controle" id="rester" onclick=stand() disabled>Stand</button>
+                </div>
+                <div class="jeu" id="jeu-joueur">
+                    <button class="bouton-controle" id="valide-mise" onclick="partie()">valider la mise</button>
+                    <div class="affichage-carte unactive" id="affichage-carte-joueur">
+                        <img src='images/vide.png' class="carte-contener" id="carte-joueur-1" style="--i:0;" alt="carte-1">
+                        <img src='images/vide.png' class="carte-contener" id="carte-joueur-2" style="--i:1;" alt="carte-2">
+                        <img src='images/vide.png' class="carte-contener" id="carte-joueur-3" style="--i:2;" alt="carte-3">
+                        <img src='images/vide.png' class="carte-contener" id="carte-joueur-4" style="--i:3;" alt="carte-4">
+                        <img src='images/vide.png' class="carte-contener" id="carte-joueur-5" style="--i:4;" alt="carte-5">
+                        <img src='images/vide.png' class="carte-contener" id="carte-joueur-6" style="--i:5;" alt="carte-6">
+                        <img src='images/vide.png' class="carte-contener" id="carte-joueur-7" style="--i:6;" alt="carte-7">
+                    </div>
+                </div>
+                <div class="conteneur-info-somme">
+                    <p class="info-somme" id="somme-joueur">23</p>
+                    <p class="type-joueur">Joueur</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
